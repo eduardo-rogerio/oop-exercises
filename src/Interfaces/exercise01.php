@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace OopExercises\Interfaces;
+
 interface Tributavel
 {
     public function calculaTributos(): float;
