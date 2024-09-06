@@ -1,14 +1,12 @@
 <?php
 
-use OopExercises\Interfaces\Listener\CacheEventListener;
-use OopExercises\Interfaces\Listener\DatabaseEventListener;
-use OopExercises\Interfaces\Listener\Event;
+use OopExercises\Interfaces\Notification\Customer;
+use OopExercises\Interfaces\Notification\EmailNotifier;
+use OopExercises\Interfaces\Notification\SMSNotifier;
 
 require 'vendor/autoload.php';
 
-$database = new DatabaseEventListener();
-$cache = new CacheEventListener();
-$event1 = new Event($database);
-$event2 = new Event($cache);
-
-dump($event1->dispath('create'),$event2->dispath('forgot'));
+$sms = new SMSNotifier();
+$email = new EmailNotifier();
+$customer = new Customer();
+dump($customer->notify($sms,'plano renovado'),$customer->notify($email,'conta registrada com sucesso'));
