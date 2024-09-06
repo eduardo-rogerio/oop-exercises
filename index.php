@@ -1,11 +1,15 @@
 <?php
 
-use OopExercises\Interfaces\Vehicle\Car;
-use OopExercises\Interfaces\Vehicle\Motorist;
-use OopExercises\Interfaces\Vehicle\Truck;
+declare(strict_types=1);
+
+use OopExercises\Interfaces\Filter\BlurFilter;
+use OopExercises\Interfaces\Filter\GrayscaleFilter;
+use OopExercises\Interfaces\Filter\Image;
+
 require 'vendor/autoload.php';
 
-$car = new Car();
-$truck = new Truck();
-$motorist = new Motorist();
-dump($motorist->driver($car), $motorist->driver($truck));
+$grayscale = new GrayscaleFilter();
+$blur = new BlurFilter();
+$image = new Image();
+
+dump($image->filter($grayscale), $image->filter($blur));
