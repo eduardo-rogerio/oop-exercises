@@ -1,12 +1,11 @@
 <?php
 
-use OopExercises\Interfaces\Notification\Customer;
-use OopExercises\Interfaces\Notification\EmailNotifier;
-use OopExercises\Interfaces\Notification\SMSNotifier;
-
+use OopExercises\Interfaces\Vehicle\Car;
+use OopExercises\Interfaces\Vehicle\Motorist;
+use OopExercises\Interfaces\Vehicle\Truck;
 require 'vendor/autoload.php';
 
-$sms = new SMSNotifier();
-$email = new EmailNotifier();
-$customer = new Customer();
-dump($customer->notify($sms,'plano renovado'),$customer->notify($email,'conta registrada com sucesso'));
+$car = new Car();
+$truck = new Truck();
+$motorist = new Motorist();
+dump($motorist->driver($car), $motorist->driver($truck));
