@@ -1,13 +1,14 @@
 <?php
 
-use OopExercises\Interfaces\Currency\Converter;
-use OopExercises\Interfaces\Currency\DollarToEuroConverter;
-use OopExercises\Interfaces\Currency\EuroToPoundConverter;
+use OopExercises\Interfaces\Listener\CacheEventListener;
+use OopExercises\Interfaces\Listener\DatabaseEventListener;
+use OopExercises\Interfaces\Listener\Event;
 
 require 'vendor/autoload.php';
 
-$currency1 = new DollarToEuroConverter();
-$currency2 = new EuroToPoundConverter();
-$converter = new Converter($currency2);
+$database = new DatabaseEventListener();
+$cache = new CacheEventListener();
+$event1 = new Event($database);
+$event2 = new Event($cache);
 
-dump($converter->converter(50.0));
+dump($event1->dispath('create'),$event2->dispath('forgot'));
