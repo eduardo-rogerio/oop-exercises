@@ -2,14 +2,20 @@
 
 declare(strict_types=1);
 
-use OopExercises\Interfaces\Filter\BlurFilter;
-use OopExercises\Interfaces\Filter\GrayscaleFilter;
-use OopExercises\Interfaces\Filter\Image;
+use OopExercises\Interfaces\Login\AdminUser;
+use OopExercises\Interfaces\Login\Auth;
+use OopExercises\Interfaces\Login\RegularUser;
 
 require 'vendor/autoload.php';
 
-$grayscale = new GrayscaleFilter();
-$blur = new BlurFilter();
-$image = new Image();
+$admin = new AdminUser();
+$user = new RegularUser();
 
-dump($image->filter($grayscale), $image->filter($blur));
+$credentials = [
+    'email' => 'admin@exemplo.com',
+    'password' => '4f9043f94v'
+];
+
+Auth::$user = $user;
+dump(Auth::check($credentials));
+dump(Auth::logout());
