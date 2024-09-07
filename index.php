@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-use OopExercises\Interfaces\Login\AdminUser;
-use OopExercises\Interfaces\Login\Auth;
-use OopExercises\Interfaces\Login\RegularUser;
-
 require 'vendor/autoload.php';
 
-$admin = new AdminUser();
-$user = new RegularUser();
+use OopExercises\Interfaces\Repository\DatabaseRepository;
+use OopExercises\Interfaces\Repository\FileRepository;
+use OopExercises\Interfaces\Repository\ServiceRepository;
 
-$credentials = [
-    'email' => 'admin@exemplo.com',
-    'password' => '4f9043f94v'
+$file = new FileRepository('database.sqlite');
+$database = new DatabaseRepository('user');
+
+$data = [
+    'name' => 'fulano',
+    'email' => 'email@example.com',
+    'phone' => '(17) 98363 4532',
 ];
 
-Auth::$user = $user;
-dump(Auth::check($credentials));
-dump(Auth::logout());
+$serviceRepository = new ServiceRepository($database);
+dump($serviceRepository->save($data));
