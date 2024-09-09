@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Bike;
-use OopExercises\Abstract\Car;
-use OopExercises\Abstract\Pilot;
+use OopExercises\Abstract\Transport\Bike;
+use OopExercises\Abstract\Transport\Car;
+use OopExercises\Abstract\Transport\Pilot;
 
 require 'vendor/autoload.php';
 

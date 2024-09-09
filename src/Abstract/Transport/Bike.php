@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OopExercises\Abstract;
+namespace OopExercises\Abstract\Transport;
 
 class Bike extends Transport
 {
