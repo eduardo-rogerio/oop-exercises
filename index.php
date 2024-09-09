@@ -2,14 +2,11 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Transport\Bike;
-use OopExercises\Abstract\Transport\Car;
-use OopExercises\Abstract\Transport\Pilot;
+use OopExercises\Abstract\Animal\Bird;
+use OopExercises\Abstract\Animal\Zoo;
 
 require 'vendor/autoload.php';
 
-$car = new Car;
-$bike = new Bike;
-$pilot = new Pilot($car);
-
-dump($pilot->run());
+$animal = new Bird;
+$zoo = new Zoo($animal);
+dump($zoo->sound());
