@@ -6,7 +6,9 @@ use OopExercises\Abstract\Bank\BankAccount;
 
 class SavingsAccount extends BankAccount
 {
-    public function __construct(public float $total, public string $agency, public string $accountNumber)
+    public float $total;
+
+    public function __construct(public string $agency, public string $accountNumber)
     {
         $this->total = random_int(2000, 50000);
     }
