@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Shop\Book;
-use OopExercises\Abstract\Shop\Clothing;
-use OopExercises\Abstract\Shop\Shop;
-
 require 'vendor/autoload.php';
 
-$book = new Book;
-$clothing = new Clothing;
-$shop = new Shop($clothing);
+use OopExercises\Abstract\Geometric\Circle;
+use OopExercises\Abstract\Geometric\Geometric;
+use OopExercises\Abstract\Geometric\Rectangle;
 
-dump($shop->showProduct());
+$circle = new Circle(16);
+$rectangle = new Rectangle(7, 25);
+
+$geometric_1 = new Geometric($circle);
+$geometric_2 = new Geometric($rectangle);
+
+dump($geometric_1->metrics());
+dump($geometric_2->metrics());
