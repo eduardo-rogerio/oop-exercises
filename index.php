@@ -2,15 +2,11 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Employee\Contractor;
-use OopExercises\Abstract\Employee\FullTimeEmployee;
-use OopExercises\Abstract\Employee\PartTimeEmployee;
+use OopExercises\Abstract\Documents\Reader;
+use OopExercises\Abstract\Documents\WordDocument;
 
 require 'vendor/autoload.php';
 
-$employee = new FullTimeEmployee;
-$trainee = new PartTimeEmployee;
-$contractor = new Contractor;
-
-dump($contractor->calculateEmployeeSalary($trainee));
-dump($contractor->calculateEmployeeSalary($employee));
+$word = new WordDocument;
+$reader = new Reader($word);
+dump($reader->read());
