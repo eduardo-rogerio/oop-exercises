@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Documents\Reader;
-use OopExercises\Abstract\Documents\WordDocument;
+use OopExercises\Abstract\Shop\Book;
+use OopExercises\Abstract\Shop\Clothing;
+use OopExercises\Abstract\Shop\Shop;
 
 require 'vendor/autoload.php';
 
-$word = new WordDocument;
-$reader = new Reader($word);
-dump($reader->read());
+$book = new Book;
+$clothing = new Clothing;
+$shop = new Shop($clothing);
+
+dump($shop->showProduct());
