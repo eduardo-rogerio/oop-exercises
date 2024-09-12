@@ -9,7 +9,7 @@ class VideoGame extends Game
 
     public function startGame(): string
     {
-        return 'Loding...';
+        return 'Loding game...';
     }
 
     public function endGame(): string
