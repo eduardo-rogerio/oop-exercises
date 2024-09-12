@@ -9,16 +9,16 @@ class Chess extends Game
 
     public function startGame(): string
     {
-        // TODO: Implement startGame() method.
+        return 'Brancas jogam...';
     }
 
     public function endGame(): string
     {
-        // TODO: Implement endGame() method.
+        return 'Checkmate!';
     }
 
     public function play(): string
     {
-        // TODO: Implement play() method.
+        return 'Jogando xadrez...';
     }
 }
