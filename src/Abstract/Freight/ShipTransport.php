@@ -9,16 +9,16 @@ class ShipTransport extends CargoTransport
 
     public function loadCargo(): string
     {
-        // TODO: Implement loadCargo() method.
+        return 'Coloca a carga no navio...';
     }
 
     public function unloadCargo(): string
     {
-        // TODO: Implement unloadCargo() method.
+        return 'Retira a carga do navio...';
     }
 
     public function calculateCost(): string
     {
-        // TODO: Implement calculateCost() method.
+        return 'Calcula o custo do transporte por navio...';
     }
 }
