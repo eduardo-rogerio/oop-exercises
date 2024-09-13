@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Play\Chess;
-use OopExercises\Abstract\Play\Soccer;
-use OopExercises\Abstract\Play\VideoGame;
+use OopExercises\Abstract\Freight\AirTransport;
+use OopExercises\Abstract\Freight\ShipTransport;
+use OopExercises\Abstract\Freight\TruckTransport;
 
 require 'vendor/autoload.php';
 
-$chess = new Chess();
-$soccer = new Soccer();
-$videoGame = new VideoGame();
-dump($soccer->startGame(), $chess->startGame(), $videoGame->startGame());
-
-
+$truck = new TruckTransport;
+$ship = new ShipTransport;
+$airplane = new AirTransport;
+dump($airplane->loadCargo(), $airplane->unloadCargo(), $airplane->calculateCost());

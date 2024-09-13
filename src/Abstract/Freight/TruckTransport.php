@@ -19,6 +19,6 @@ class TruckTransport extends CargoTransport
 
     public function calculateCost(): string
     {
-        return 'Calcula o custo do transporte por caminhão...';
+        return 'R$ 2.500,00 por tonelada';
     }
 }

@@ -19,6 +19,6 @@ class AirTransport extends CargoTransport
 
     public function calculateCost(): string
     {
-        return 'Calcula o custo do transporte por avião...';
+        return 'R$ 5.300,00 por tonelada';
     }
 }

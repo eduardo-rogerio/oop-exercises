@@ -19,6 +19,6 @@ class ShipTransport extends CargoTransport
 
     public function calculateCost(): string
     {
-        return 'Calcula o custo do transporte por navio...';
+        return 'R$ 1.800,00 por tonelada';
     }
 }
