@@ -9,11 +9,11 @@ class Developer extends StaffMember
 
     public function calculateBonus(): int
     {
-        // TODO: Implement calculateBonus() method.
+        return 500;
     }
 
     public function getJobTitle(): string
     {
-        // TODO: Implement getJobTitle() method.
+        return 'Developer';
     }
 }

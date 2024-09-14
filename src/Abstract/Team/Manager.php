@@ -9,11 +9,11 @@ class Manager extends StaffMember
 
     public function calculateBonus(): int
     {
-        // TODO: Implement calculateBonus() method.
+        return 1000;
     }
 
     public function getJobTitle(): string
     {
-        // TODO: Implement getJobTitle() method.
+        return 'Manager';
     }
 }
