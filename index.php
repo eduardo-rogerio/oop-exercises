@@ -2,20 +2,10 @@
 
 declare(strict_types=1);
 
-use OopExercises\Abstract\Team\Designer;
-use OopExercises\Abstract\Team\Developer;
-use OopExercises\Abstract\Team\Manager;
-use OopExercises\Abstract\Team\Staff;
+use OopExercises\Traits\FileProcessor;
 
 require 'vendor/autoload.php';
 
-$manger = new Manager();
-$develop = new Developer();
-$designer = new Designer();
+$file = new FileProcessor;
 
-$staff = new Staff();
-$staff->addMember($manger);
-$staff->addMember($develop);
-$staff->addMember($designer);
-
-dump($staff->calculateBonus());
+dump($file->process('file.txt'));
