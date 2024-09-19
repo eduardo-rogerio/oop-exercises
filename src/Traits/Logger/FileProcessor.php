@@ -1,6 +1,6 @@
 <?php
 
-namespace OopExercises\Traits;
+namespace OopExercises\Traits\Logger;
 
 class FileProcessor
 {

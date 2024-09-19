@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use OopExercises\Traits\FileProcessor;
+use OopExercises\Traits\Logger\FileProcessor;
 
 require 'vendor/autoload.php';
 
