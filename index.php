@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-use OopExercises\Traits\Authenticatable\AdminUser;
-use OopExercises\Traits\Authenticatable\RegularUser;
+use OopExercises\Traits\Notifiable\EmailNotifier;
+use OopExercises\Traits\Notifiable\PushNotifier;
+use OopExercises\Traits\Notifiable\SMSNotifier;
 
 require 'vendor/autoload.php';
 
-$admin = new AdminUser('admin', '32186568');
-$user = new RegularUser('user', '12345678');
+$email = new EmailNotifier;
+$sms = new SMSNotifier;
+$push = new PushNotifier;
 
-dump($admin->authenticate('admin', '32186568'));
-dump($user->authenticate('user', '123456785'));
+dump($email->sendNotification('Notificação por e-mail'),$sms->sendNotification('Notificação por SMS'),$push->sendNotification('Notificação por push'));
