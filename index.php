@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-use OopExercises\Traits\Serializable\Book;
-use OopExercises\Traits\Serializable\Order;
-use OopExercises\Traits\Serializable\Person;
+use OopExercises\Traits\Payment\BankTransferPayment;
+use OopExercises\Traits\Payment\CreditCardPayment;
+use OopExercises\Traits\Payment\PayPalPayment;
 
 require 'vendor/autoload.php';
 
-$person = new Person('Afonso', 'afonso@email.com');
-$order = new Order('teclado', 'R$ 350,00');
-$book = new Book('Sistemas Operacionais: Projeto e Implementação', '978-8577800575');
+$creditCard = new CreditCardPayment();
+$paypal = new PayPalPayment();
+$bankTransfer = new BankTransferPayment();
 
-dump($person->serialize(), $order->serialize(), $book->serialize());
+dump($paypal->makePayment(2500), $bankTransfer->refundPayment(300), $creditCard->makePayment(1988));
