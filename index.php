@@ -9,4 +9,4 @@ require 'vendor/autoload.php';
 
 $sea = new SeaFreight();
 $air = new AirFreight();
-dump($sea->calculateShippingCost(tax:45, km: 1200), $air->calculateShippingCost(tax: 23, km: 200));
+dump($sea->calculateShippingCost(tax:45, km: 1200), $air->trackShipment('LA206412146BN'));
