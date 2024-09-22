@@ -2,14 +2,11 @@
 
 declare(strict_types=1);
 
-use OopExercises\Traits\Payment\BankTransferPayment;
-use OopExercises\Traits\Payment\CreditCardPayment;
-use OopExercises\Traits\Payment\PayPalPayment;
+use OopExercises\Traits\Shippable\AirFreight;
+use OopExercises\Traits\Shippable\SeaFreight;
 
 require 'vendor/autoload.php';
 
-$creditCard = new CreditCardPayment();
-$paypal = new PayPalPayment();
-$bankTransfer = new BankTransferPayment();
-
-dump($paypal->makePayment(2500), $bankTransfer->refundPayment(300), $creditCard->makePayment(1988));
+$sea = new SeaFreight();
+$air = new AirFreight();
+dump($sea->calculateShippingCost(tax:45, km: 1200), $air->calculateShippingCost(tax: 23, km: 200));
