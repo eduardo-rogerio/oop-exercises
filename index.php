@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-use OopExercises\Traits\Shippable\AirFreight;
-use OopExercises\Traits\Shippable\SeaFreight;
+use OopExercises\Traits\Scorable\Basketball;
+use OopExercises\Traits\Scorable\Soccer;
 
 require 'vendor/autoload.php';
 
-$sea = new SeaFreight();
-$air = new AirFreight();
-dump($sea->calculateShippingCost(tax:45, km: 1200), $air->trackShipment('LA206412146BN'));
+$soccer = new Soccer();
+$bascketBall = new Basketball();
+
+dump($soccer->increaseScore(1), $bascketBall->increaseScore(3));
