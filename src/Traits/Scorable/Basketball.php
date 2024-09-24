@@ -6,5 +6,5 @@ class Basketball
 {
     use Scorable;
 
-    public $points;
+    public $points = 45;
 }

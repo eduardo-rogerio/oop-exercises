@@ -10,4 +10,4 @@ require 'vendor/autoload.php';
 $soccer = new Soccer();
 $bascketBall = new Basketball();
 
-dump($soccer->increaseScore(1), $bascketBall->increaseScore(3));
+dump("marcou um gol placar: {$soccer->increaseScore(1)} a 0", "cesta de 3 pontos placar: {$bascketBall->increaseScore(3)} a 34");
