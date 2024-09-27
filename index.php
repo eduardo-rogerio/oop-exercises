@@ -2,12 +2,23 @@
 
 declare(strict_types=1);
 
+use OopExercises\Enum\Days\DayOfWeek;
+
 require 'vendor/autoload.php';
 
-$invoice = new OopExercises\Traits\Auditable\Invoice();
-$transaction = new OopExercises\Traits\Auditable\Transaction();
-$userAccount = new OopExercises\Traits\Auditable\UserAccount();
+function getDaysOfWeek(DayOfWeek $day): string
+{
+    return match($day) {
+        DayOfWeek::Monday => 'Segunda-feira',
+        DayOfWeek::Tuesday => 'Terça-feira',
+        DayOfWeek::Wednesday => 'Quarta-feira',
+        DayOfWeek::Trursday => 'Quinta-feira',
+        DayOfWeek::Friday => 'Sexta-feira',
+        DayOfWeek::Saturday => 'Sábado',
+        DayOfWeek::Sunday => 'Domingo',
+    };
+}
 
-$invoice->recordCreation();
-$transaction->recordCreation();
-$userAccount->recordCreation();
+echo getDaysOfWeek(DayOfWeek::Wednesday) . PHP_EOL;
+echo getDaysOfWeek(DayOfWeek::Tuesday) . PHP_EOL;
+echo DayOfWeek::Sunday->isWeekend() ? 'É fim de semana' : 'Não é fim de semana';
