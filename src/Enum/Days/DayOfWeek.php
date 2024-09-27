@@ -19,4 +19,12 @@ enum DayOfWeek: string
             default => false,
         };
     }
+
+    public function businessDay(): bool
+    {
+        return match($this){
+            self::Saturday, self::Sunday => false,
+            default => true,
+        };
+    }
 }
