@@ -2,9 +2,21 @@
 
 declare(strict_types=1);
 
-use OopExercises\Enum\Days\DayOfWeek;
+use OopExercises\Enum\Order\OrderStatus;
 
 require 'vendor/autoload.php';
 
-echo DayOfWeek::Sunday->isWeekend() ? 'É fim de semana' . PHP_EOL : 'Não é fim de semana' . PHP_EOL;
-echo DayOfWeek::Monday->businessDay() ? 'É dia útil' . PHP_EOL : 'Não é dia útil' . PHP_EOL;
+function order(OrderStatus $status): string
+{
+    return match($status) {
+        OrderStatus::Pending => 'Pedido pendente...',
+        OrderStatus::Processing => 'Pedido em processamento...',
+        OrderStatus::Completed => 'Pedido concluído...',
+        OrderStatus::Cancelled => 'Pedido cancelado...',
+        OrderStatus::Refunded => 'Pedido reembolsado...',
+        OrderStatus::Failed => 'Pedido falhou...',
+        OrderStatus::Trash => 'Pedido excluído...',
+    };
+}
+
+echo order(OrderStatus::Processing) . PHP_EOL;

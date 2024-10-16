@@ -22,7 +22,7 @@ enum DayOfWeek: string
 
     public function businessDay(): bool
     {
-        return match($this){
+        return match($this) {
             self::Saturday, self::Sunday => false,
             default => true,
         };
