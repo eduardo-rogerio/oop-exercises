@@ -2,21 +2,15 @@
 
 declare(strict_types=1);
 
-use OopExercises\Enum\Order\OrderStatus;
-
+use OopExercises\Enum\Access\AccessLevel;
 require 'vendor/autoload.php';
 
-function order(OrderStatus $status): string
+function canEdit(AccessLevel $level): string
 {
-    return match($status) {
-        OrderStatus::Pending => 'Pedido pendente...',
-        OrderStatus::Processing => 'Pedido em processamento...',
-        OrderStatus::Completed => 'Pedido concluído...',
-        OrderStatus::Cancelled => 'Pedido cancelado...',
-        OrderStatus::Refunded => 'Pedido reembolsado...',
-        OrderStatus::Failed => 'Pedido falhou...',
-        OrderStatus::Trash => 'Pedido excluído...',
+    return match($level) {
+        AccessLevel::Viewer => 'não',
+        default => 'sim'
     };
 }
 
-echo order(OrderStatus::Processing) . PHP_EOL;
+echo 'O usuário tem permissão para editar: ' . canEdit(AccessLevel::Admin) . PHP_EOL;
