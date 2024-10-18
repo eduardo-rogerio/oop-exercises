@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-use OopExercises\Enum\Access\AccessLevel;
+use OopExercises\Enum\Payment\PaymentMethod;
+use OopExercises\Enum\Payment\PaymentProcessor;
+
 require 'vendor/autoload.php';
 
-function canEdit(AccessLevel $level): string
-{
-    return match($level) {
-        AccessLevel::Viewer => 'não',
-        default => 'sim'
-    };
-}
+$payment = new PaymentProcessor();
 
-echo 'O usuário tem permissão para editar: ' . canEdit(AccessLevel::Admin) . PHP_EOL;
+echo $payment->processPayment(PaymentMethod::CreditCard);
+echo $payment->processPayment(PaymentMethod::PayPal);
+echo $payment->processPayment(PaymentMethod::BankTransfer);
