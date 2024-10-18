@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use OopExercises\Enum\Payment\PaymentMethod;
-use OopExercises\Enum\Payment\PaymentProcessor;
+use OopExercises\Enum\Error\ErrorHandler;
+use OopExercises\Enum\Error\ErrorType;
 
 require 'vendor/autoload.php';
 
-$payment = new PaymentProcessor();
+$error = new ErrorHandler();
 
-echo $payment->processPayment(PaymentMethod::CreditCard);
-echo $payment->processPayment(PaymentMethod::PayPal);
-echo $payment->processPayment(PaymentMethod::BankTransfer);
+echo $error->handler(ErrorType::NotFound);
+echo $error->handler(ErrorType::Unauthorized);
+echo $error->handler(ErrorType::ServerError);
